@@ -11,22 +11,28 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+// constante average é igual a um array que serve de parâmetro para a arrow function. Após isso a variável results é igualada a 0 para ser categorizada como um número.
 const average = (array) => {
-  let conteudoArray = 0;
+  let results = 0;
 
-for (let i of array) {
-  conteudoArray += 1;
-  if (typeof i === 'string') {
+  // Se o tipo da variavel index for diferente de number retorne undefined
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof array[index] !== 'number') {
   return undefined;
   }
+results += array[index];
 }
 
+// Se o tamanho do array for igual a 0, retorne undefined
 if (array.length === 0) {
   return undefined;
 }
 
-let media = conteudoArray / array.length;
-return Math.round(media);
+// variável media é igual a variavel results divido pelo tamanho do array
+let media = results / array.length;
+
+// Arredondar o valor
+return Math.round(media); 
 };
 
 module.exports = average;
