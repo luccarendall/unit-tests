@@ -42,15 +42,3 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     expect(circle(3)).toEqual({radius: 3, area: 28.259999999999998, circumference: 18.84});
   });
 });
-
-const circle = (radius) => {
-  const PI = 3.14;
-
-  if (!radius || typeof radius !== 'number') { return undefined; }
-
-  return {
-    radius,
-    area: PI * radius * radius,
-    circumference: 2 * PI * radius,
-  };
-};
